@@ -1,0 +1,33 @@
+<head>
+
+</head>
+<body>
+    <h1 id="salutation">Welcome to the Monty Hall Problem demo!</h1>
+
+    <div id="description">
+        <p>The Monty Hall Problem is named after a popular television game show created in the 1960's.
+            It's named for the show's host, who would present contestants with three doors, each hiding a prize.
+            Behind two of these doors were "Zonks," or concession prizes, while the third door often had a shiny new sports car.</p>
+        <p>The contestant was then instructed to select one door; Monty would then reveal a Zonk behind one of the
+        the remaining two doors and ask the contestant if they would like to keep the door they originally chose,
+        or switch to the remaining door.</p>
+        <p>Statistically, it is a better decision to always switch to the other door.  Unfortunately, this is not
+        always intuitive, which has led to years of debate and discussion.  This website aims to
+        exemplify why one choice is better (or worse) than the other.</p>
+    </div>
+    <div id="basic-game">
+        <p>To start, here are some basic game options to try:</p>
+        <button id="game1" onclick="playGame(1, 3, false)">Play</button><span>One game; three doors; stay on original door.</span>
+        <button id="game2" onclick="playGame(1, 3, true)">Play</button><span>One game; three doors; swap to remaining door.</span>
+        <button id="game3" onclick="playGame(10, 3, false)">Play</button><span>Ten games; three doors; stay on original door.</span>
+        <button id="game4" onclick="playGame(10, 3, true)">Play</button><span>Ten games; three doors; swap to remaining door.</span>
+    </div>
+    <div id="results">
+        <div>Number of games played: <span id="games-played"></span></div>
+        <div>Number of doors used: <span id="doors-used"></span></div>
+        <div>Stay or Swap from original door: <span id="stay-or-swap"></span></div>
+        <div>Number of wins: <span id="wins"></span></div>
+    </div>
+
+    <script src="javascript/main.js"></script>
+</body>
