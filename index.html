@@ -15,13 +15,20 @@
         always intuitive, which has led to years of debate and discussion.  This website aims to
         exemplify why one choice is better (or worse) than the other.</p>
     </div>
+
+    <hr />
     <div id="basic-game">
         <p>To start, here are some basic game options to try:</p>
-        <button id="game-1" onclick="playGame(1, 3, false)">Play</button><span>One round; three doors; stay on original door.</span>
-        <button id="game-2" onclick="playGame(1, 3, true)">Play</button><span>One round; three doors; swap to remaining door.</span>
-        <button id="game-3" onclick="playGame(10, 3, false)">Play</button><span>Ten rounds; three doors; stay on original door.</span>
-        <button id="game-4" onclick="playGame(10, 3, true)">Play</button><span>Ten rounds; three doors; swap to remaining door.</span>
+        <button id="game-1" onclick="playGameWithTemplate(1, 3, false)">Play</button><span>One round; three doors; stay on original door.</span><br />
+        <button id="game-2" onclick="playGameWithTemplate(1, 3, true)">Play</button><span>One round; three doors; swap to remaining door.</span><br />
+        <button id="game-3" onclick="playGameWithTemplate(10, 3, false)">Play</button><span>Ten rounds; three doors; stay on original door.</span><br />
+        <button id="game-4" onclick="playGameWithTemplate(10, 3, true)">Play</button><span>Ten rounds; three doors; swap to remaining door.</span><br />
+        <hr /><p>Now, to illustrate how important it is to always swap to the remaining door:</p>
+        <button id="game-5" onclick="playGameWithTemplate(1000, 100, false)">Play</button><span>1000 rounds; 100 doors; stay on original door.</span><br />
+        <button id="game-6" onclick="playGameWithTemplate(1000, 100, true)">Play</button><span>1000 rounds; 100 doors; swap to remaining door.</span><br />
     </div>
+
+    <hr />
     <div id="results">
         <div>Number of games played: <span id="rounds-played"></span></div>
         <div>Number of doors used: <span id="doors-used"></span></div>

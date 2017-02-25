@@ -21,6 +21,29 @@ let playGame = (numberOfRounds, numberOfDoors, isSwapping) => {
     xhr.send();
 }
 
+let playGameWithTemplate = (numberOfRounds, numberOfDoors, isSwapping) => {
+    let xhr = new XMLHttpRequest();
+    let variables = {
+        'numberOfRounds' : numberOfRounds,
+        'numberOfDoors' : numberOfDoors,
+        'swapping' : isSwapping
+    };
+    xhr.open('POST', 'http://' + DOMAIN + '/engine/template');
+    xhr.onload = function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                displayGameResults(xhr.response, variables);
+            } else {
+                console.error(xhr.statusText);
+            }
+        }
+    };
+
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    let data = JSON.stringify(variables);
+    xhr.send(data);
+}
+
 let displayGameResults = (result, variables) => {
     let roundsPlayed = document.getElementById('rounds-played');
     let doorsUsed = document.getElementById('doors-used');
