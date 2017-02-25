@@ -4,14 +4,7 @@
 // let game4 = document.getElementById('game4');
 
 
-let playGame = (numberOfGames, numberOfDoors, isSwapping) => {
-    displayGameResults('Victory!');
-}
 
-let displayGameResults = (victory) => {
-    let wins = document.getElementById('wins');
-    wins.innerHTML = victory;
-}
 
 // game1.onclick = playGame(1, 3, false);
 // game2.onclick = playGame(1, 3, true);
