@@ -14,14 +14,15 @@
             <p>The contestant was instructed to select one door; Monty would then reveal a Zonk behind one of the
             the remaining two doors and ask the contestant if they would like to keep the door they originally chose,
             or swap to the remaining door.</p>
-            <p>Statistically, it is a better decision to always swap to the other door.  Unfortunately, this is not
-            always intuitive which has led to years of debate and discussion.  This website aims to
+            <p>Statistically, it is always a better decision to swap to the other door.  Unfortunately, this is not
+            necessarily intuitive which has led to years of debate and discussion.  This website aims to
             exemplify why one choice is better (or worse) than the other.</p>
         </div>
 
         <hr />
         <div id="basic-game">
-            <p>To start, here are some basic game options to try:</p>
+            <p>To start, the basic game has three doors and a decision on whether to stay or swap.  Playing more games starts to reveal
+            the statistics a bit and you can see a pattern emerging.</p>
             <table>
                 <tr>
                     <td><span>One round; three doors; stay on original door.</span></td>
@@ -40,8 +41,11 @@
                     <td><button id="game-4" onclick="playGameWithTemplate(10, 3, true)">Play</button></td>
                 </tr>
             </table>
+        </div>
+
+        <div id="advanced-game">
             <hr />
-            <p>Now, to illustrate how important it is to always swap to the remaining door we will alter the game slightly.</p>
+            <p>To illustrate how important it is to always swap to the remaining door we can alter the game slightly.</p>
             <p>In these examples, the game will have 100 doors instead of 3, and Monty will reveal every single door except one.
                 It's important to remember that he obviously can't reveal the door with the car; he can only reveal Zonks.
                 This makes the collapse of the odds for the car into the final door <em>extremely</em> obvious.</p>
@@ -58,8 +62,8 @@
                 </tr>
             </table>
         </div>
-
         <hr />
+
         <div id="results">
             <table>
                 <tr>
