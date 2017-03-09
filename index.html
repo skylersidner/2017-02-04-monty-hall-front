@@ -18,83 +18,97 @@
             necessarily intuitive which has led to years of debate and discussion.  This website aims to
             exemplify why one choice is better (or worse) than the other.</p>
         </div>
-
-        <hr />
-        <div id="basic-game">
-            <p>To start, the basic game has three doors and a decision on whether to stay or swap.  Playing more games starts to reveal
-            the statistics a bit and you can see a pattern emerging.</p>
-            <table>
-                <tr>
-                    <td><span>One round; three doors; stay on original door.</span></td>
-                    <td><button id="game-1" onclick="playGameWithTemplate(1, 3, false)">Play</button></td>
-                </tr>
-                <tr>
-                    <td><span>One round; three doors; swap to remaining door.</span></td>
-                    <td><button id="game-2" onclick="playGameWithTemplate(1, 3, true)">Play</button></td>
-                </tr>
-                <tr>
-                    <td><span>Ten rounds; three doors; stay on original door.</span></td>
-                    <td><button id="game-3" onclick="playGameWithTemplate(10, 3, false)">Play</button></td>
-                </tr>
-                <tr>
-                    <td><span>Ten rounds; three doors; swap to remaining door.</span></td>
-                    <td><button id="game-4" onclick="playGameWithTemplate(10, 3, true)">Play</button></td>
-                </tr>
-            </table>
-        </div>
-
-        <div id="advanced-game">
-            <hr />
-            <p>To illustrate how important it is to always swap to the remaining door we can alter the game slightly.</p>
-            <p>In these examples, the game will have 100 doors instead of 3, and Monty will reveal every single door except one.
-                It's important to remember that he obviously can't reveal the door with the car; he can only reveal Zonks.
-                This makes the collapse of the odds for the car into the final door <em>extremely</em> obvious.</p>
-            <p>Another way of looking at it is to ask what the odds are that you chose the car on your first pick:
-                1 in 100 for this case.  Still want to stay on that door?</p>
-            <table>
-                <tr>
-                    <td><span>1000 rounds; 100 doors; stay on original door.</span></td>
-                    <td><button id="game-5" onclick="playGameWithTemplate(1000, 100, false)">Play</button></td>
-                </tr>
-                <tr>
-                    <td><span>1000 rounds; 100 doors; swap to remaining door.</span></td>
-                    <td><button id="game-6" onclick="playGameWithTemplate(1000, 100, true)">Play</button></td>
-                </tr>
-            </table>
-        </div>
         <hr />
 
-        <div id="results">
-            <table>
-                <tr>
-                    <td><span>Number of games played:</span></td>
-                    <td><span id="rounds-played"></span></td>
-                </tr>
-                <tr>
-                    <td><span>Number of doors used:</span></td>
-                    <td><span id="doors-used"></span></td>
-                </tr>
-                <tr>
-                    <td><span>Stay or Swap from original door:</span></td>
-                    <td><span id="stay-or-swap"></span></td>
-                </tr>
-                <tr>
-                    <td><span>Game win percentage (on average):</span></td>
-                    <td><span id="win-percentage"></span></td>
-                </tr>
-                <tr>
-                    <td><span>Number of wins:</span></td>
-                    <td><span id="wins"></span></td>
-                </tr>
-            </table>
+        <div class="row">
+            <button id="basicToggle" class="mode-toggle" onclick="toggleGameMode('basicGame')">Basic</button>
+            <button id="advancedToggle" class="mode-toggle" onclick="toggleGameMode('advancedGame')">Advanced</button>
+            <button id="customToggle" class="mode-toggle" onclick="toggleGameMode('customGame')">Custom</button>
         </div>
 
+        <div class="row">
+
+            <div id="basicGame" class="col-xs-12 col-md-6 game-mode">
+                <p>To start, the basic game has three doors and a decision on whether to stay or swap.  Playing more games starts to reveal
+                the statistics a bit and you can see a pattern emerging.</p>
+                <table>
+                    <tr>
+                        <td><span>One round; three doors; stay on original door.</span></td>
+                        <td><button id="game1" onclick="playGameWithTemplate(1, 3, false)">Play</button></td>
+                    </tr>
+                    <tr>
+                        <td><span>One round; three doors; swap to remaining door.</span></td>
+                        <td><button id="game2" onclick="playGameWithTemplate(1, 3, true)">Play</button></td>
+                    </tr>
+                    <tr>
+                        <td><span>Ten rounds; three doors; stay on original door.</span></td>
+                        <td><button id="game3" onclick="playGameWithTemplate(10, 3, false)">Play</button></td>
+                    </tr>
+                    <tr>
+                        <td><span>Ten rounds; three doors; swap to remaining door.</span></td>
+                        <td><button id="game4" onclick="playGameWithTemplate(10, 3, true)">Play</button></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="advancedGame"  class="col-xs-12 col-md-6 game-mode hidden">
+                <p>To illustrate how important it is to always swap to the remaining door we can alter the game slightly.</p>
+                <p>In these examples, the game will have 100 doors instead of 3, and Monty will reveal every single door except one.
+                    It's important to remember that he obviously can't reveal the door with the car; he can only reveal Zonks.
+                    This makes the collapse of the odds for the car into the final door <em>extremely</em> obvious.</p>
+                <p>Another way of looking at it is to ask what the odds are that you chose the car on your first pick:
+                    1 in 100 for this case.  Still want to stay on that door?</p>
+                <table>
+                    <tr>
+                        <td><span>1000 rounds; 100 doors; stay on original door.</span></td>
+                        <td><button id="game5" onclick="playGameWithTemplate(1000, 100, false)">Play</button></td>
+                    </tr>
+                    <tr>
+                        <td><span>1000 rounds; 100 doors; swap to remaining door.</span></td>
+                        <td><button id="game6" onclick="playGameWithTemplate(1000, 100, true)">Play</button></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="customGame" class="col-xs-12 col-md-6 game-mode hidden">
+                <p>Comming soon!</p>
+            </div>
+
+            <div id="results" class="col-xs-12 col-md-6">
+                <table>
+                    <tr>
+                        <td><span>Number of games played:</span></td>
+                        <td><span id="roundsPlayed"></span></td>
+                    </tr>
+                    <tr>
+                        <td><span>Number of doors used:</span></td>
+                        <td><span id="doorsUsed"></span></td>
+                    </tr>
+                    <tr>
+                        <td><span>Stay or Swap from original door:</span></td>
+                        <td><span id="stayOrSwap"></span></td>
+                    </tr>
+                    <tr>
+                        <td><span>Game win percentage (on average):</span></td>
+                        <td><span id="winPercentage"></span></td>
+                    </tr>
+                    <tr>
+                        <td><span>Number of wins:</span></td>
+                        <td><span id="wins"></span></td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+
+        <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
         <script src="javascript/decisionEngineService.js"></script>
-        <!--<script src="javascript/main.js"></script>-->
+        <script src="javascript/main.js"></script>
     </div>
 </body>
 </html>

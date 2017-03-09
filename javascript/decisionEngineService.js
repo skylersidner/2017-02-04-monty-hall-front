@@ -45,10 +45,10 @@ let playGameWithTemplate = (numberOfRounds, numberOfDoors, isSwapping) => {
 }
 
 let displayGameResults = (result, variables) => {
-    let roundsPlayed = document.getElementById('rounds-played');
-    let doorsUsed = document.getElementById('doors-used');
-    let stayOrSwap = document.getElementById('stay-or-swap');
-    let winPercentage = document.getElementById('win-percentage');
+    let roundsPlayed = document.getElementById('roundsPlayed');
+    let doorsUsed = document.getElementById('doorsUsed');
+    let stayOrSwap = document.getElementById('stayOrSwap');
+    let winPercentage = document.getElementById('winPercentage');
     let wins = document.getElementById('wins');
 
     roundsPlayed.innerHTML = variables.numberOfRounds;
