@@ -48,11 +48,24 @@ let displayGameResults = (result, variables) => {
     let roundsPlayed = document.getElementById('rounds-played');
     let doorsUsed = document.getElementById('doors-used');
     let stayOrSwap = document.getElementById('stay-or-swap');
+    let winPercentage = document.getElementById('win-percentage');
     let wins = document.getElementById('wins');
 
     roundsPlayed.innerHTML = variables.numberOfRounds;
     doorsUsed.innerHTML = variables.numberOfDoors;
     stayOrSwap.innerHTML = variables.isSwapping ? 'Swap' : 'Stay';
+    winPercentage.innerHTML = getWinPercentage(variables.numberOfDoors, variables.swapping);
 
     wins.innerHTML = result;
+}
+
+let getWinPercentage = (numberOfDoors, isSwapping) => {
+    let percent;
+    if (isSwapping) {
+        percent = 100 - (1 / numberOfDoors * 100);
+    } else {
+        percent = (1 / numberOfDoors * 100);
+    }
+
+    return percent.toFixed(2).toString() + '%';
 }
